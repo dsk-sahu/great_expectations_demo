@@ -27,3 +27,5 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+    - script: docker cp $(build.containerId):/tmp/GE/great_expectations/uncommitted/data_docs/ .
+
