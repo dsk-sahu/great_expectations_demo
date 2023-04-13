@@ -28,4 +28,10 @@ stages:
         tags: |
           $(tag)
     - script: docker cp $(build.containerId):/tmp/GE/great_expectations/uncommitted/data_docs/ .
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: './local_site/'
+        ArtifactName: 'report'
+        publishLocation: 'Container'
+        StoreAsTar: true
 
