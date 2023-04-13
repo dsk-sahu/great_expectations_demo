@@ -6,7 +6,7 @@ RUN mkdir /tmp/GE
 WORKDIR /tmp/GE
 COPY . /tmp/GE
 RUN ls -lrt
-RUN great_expectations init
+RUN great_expectations init -y
 RUN createDataSource.py
 RUN createExpectations.py
 RUN createCheckpoint.py
