@@ -25,9 +25,10 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+        container: mycontainer
         tags: |
           $(tag)
-    - script: docker cp $(build.containerId):/tmp/GE/great_expectations/uncommitted/data_docs/ .
+    - script: docker cp mycontainer:/tmp/GE/great_expectations/uncommitted/data_docs/ .
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: './local_site/'
