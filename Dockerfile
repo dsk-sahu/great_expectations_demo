@@ -7,7 +7,7 @@ WORKDIR /tmp/GE
 COPY . /tmp/GE
 RUN ls -lrt
 RUN yes | great_expectations init
-RUN createDataSource.py
-RUN createExpectations.py
-RUN createCheckpoint.py
+RUN python createDataSource.py
+RUN python createExpectations.py
+RUN python createCheckpoint.py
 RUN ls -lrt /great_expectations/uncommitted/data_docs/local_site
