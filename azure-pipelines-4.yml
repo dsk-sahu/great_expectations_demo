@@ -28,7 +28,9 @@ stages:
         container: mycontainer
         tags: |
           $(tag)
-    - script: docker cp mycontainer:/tmp/GE/great_expectations/uncommitted/data_docs/ .
+    - script: |
+        docker ps -a
+        docker cp mycontainer:/tmp/GE/great_expectations/uncommitted/data_docs/ .
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: './local_site/'
