@@ -10,4 +10,4 @@ RUN yes | great_expectations init
 RUN python createDataSource.py
 RUN python createExpectations.py
 RUN python createCheckpoint.py
-RUN ls -lrt /great_expectations/uncommitted/data_docs/local_site
+RUN ls -lrt ./great_expectations/uncommitted/data_docs/local_site
