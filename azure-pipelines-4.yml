@@ -35,7 +35,7 @@ stages:
         ls -lrt
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: './local_site/'
+        PathtoPublish: './data_docs/'
         ArtifactName: 'report'
         publishLocation: 'Container'
         StoreAsTar: true
