@@ -25,10 +25,10 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        arguments: --name mycontainer
         tags: |
           $(tag)
     - script: |
+        docker images -a
         docker ps -a
         docker cp mycontainer:/tmp/GE/great_expectations/uncommitted/data_docs/ .
     - task: PublishBuildArtifacts@1
