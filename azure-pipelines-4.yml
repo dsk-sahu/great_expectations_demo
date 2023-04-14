@@ -31,7 +31,7 @@ stages:
         docker images -a
         docker run -d -it --name great_exp_trial ge_image
         docker ps -a
-        docker cp ge_image:/tmp/GE/great_expectations/uncommitted/data_docs/ .
+        docker cp great_exp_trial:/tmp/GE/great_expectations/uncommitted/data_docs/ .
         ls -lrt
     - task: PublishBuildArtifacts@1
       inputs:
